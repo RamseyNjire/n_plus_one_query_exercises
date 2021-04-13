@@ -16,5 +16,7 @@ class Artist < ApplicationRecord
 
   def better_tracks_query
     # TODO: your code here
+    albums = self.albums.includes(:tracks)
+    tracks_count = albums.tracks.length
   end
 end
